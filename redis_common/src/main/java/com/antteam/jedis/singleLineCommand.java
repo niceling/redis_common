@@ -8,18 +8,17 @@
 */
 package com.antteam.jedis;
 
-import com.antteam.jedis.inf.JedisClusterDataCallBack;
-import com.antteam.jedis.inf.JedisDataCallBack;
 import com.antteam.jedis.utils.RedisConnection;
 
 import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisCluster;
 
 /**   
 * @Package com.antteam.jedis 
 * @author niceling
 * @date 2015年11月11日 下午2:55:12   
 */
-public class singleLineCommand{
+public class SingleLineCommand{
 
 	/**
 	* @Title: excute 
@@ -29,7 +28,7 @@ public class singleLineCommand{
 	* @return String
 	* @throws
 	 */
-	public static <T> T excute(JedisDataCallBack<T> dataCallBack){
+	public static <T> T excute(JedisDataCallBack<T> dataCallBack)throws Exception{
 		RedisConnection.getInstance();
 		Jedis jedis=RedisConnection.getJedis();
 		try {
@@ -40,9 +39,17 @@ public class singleLineCommand{
 	}
 	
 	
-	public static <T> T excute(JedisClusterDataCallBack<T> dataCallBack){
+	public static <T> T excute(JedisClusterDataCallBack<T> dataCallBack)throws Exception{
 		//TODO 集群的实现代码
 		return null;
 	}
 	
+	public interface JedisDataCallBack<T>{
+		public T command(Jedis jedis);
+		
+	}
+	
+	public interface JedisClusterDataCallBack<T> {
+		public T command(JedisCluster jedisCluster);
+	}
 }

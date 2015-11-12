@@ -6,14 +6,14 @@
 * @date 2015年11月11日 下午3:16:59 
 * @version V1.0   
 */
-package redis_common;
+package com.antteam.test;
 
 import java.util.Set;
 
 import org.junit.Test;
 
-import com.antteam.jedis.singleLineCommand;
-import com.antteam.jedis.inf.JedisDataCallBack;
+import com.antteam.jedis.SingleLineCommand;
+import com.antteam.jedis.SingleLineCommand.JedisDataCallBack;
 
 import redis.clients.jedis.Jedis;
 
@@ -22,15 +22,14 @@ import redis.clients.jedis.Jedis;
 * @author niceling
 * @date 2015年11月11日 下午3:16:59   
 */
-
 public class BaseTest {
 	
 	@Test
 	public void TestSingleCommand(){
 		try {
-			Long val=singleLineCommand.excute(new JedisDataCallBack<Long>() {
-				public Long command(Jedis jedis) {
-					return jedis.sadd("mylist", "c");
+			String val=SingleLineCommand.excute(new JedisDataCallBack<String>() {
+				public String command(Jedis jedis) {
+					return jedis.get("bar");
 				}
 			});
 			System.out.println(val);
@@ -42,8 +41,7 @@ public class BaseTest {
 	@Test
 	public void TestSingleCommand2(){
 		try {
-			
-			Set<String> val=singleLineCommand.excute(new JedisDataCallBack<Set<String>>() {
+			Set<String> val=SingleLineCommand.excute(new JedisDataCallBack<Set<String>>() {
 				public Set<String> command(Jedis jedis) {
 					return jedis.smembers("mylist");
 				}
