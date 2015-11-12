@@ -39,7 +39,9 @@ public class TransationCommand {
 	public static List<Object> excuteWithWatch(String[] watchKeys,TransactionDataCallBack dataCallBack) throws Exception{
 		RedisConnection.getInstance();
 		Jedis jedis=RedisConnection.getJedis();
-		jedis.watch(watchKeys);
+		if(watchKeys!=null && watchKeys.length>0){
+			jedis.watch(watchKeys);
+		}
 		/**¿ªÆôÊÂÎñ*/
 		Transaction transaction=jedis.multi();
 		try {

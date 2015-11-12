@@ -1,9 +1,9 @@
 /**   
 * @Title: SetGet.java 
 * @Package com.antteam.jedis 
-* @Description: TODO(用一句话描述该文件做什么) 
-* @author 张美玲
-* @date 2015年11月11日 下午2:55:12 
+* @Description: TODO(锟斤拷一锟戒话锟斤拷锟斤拷锟斤拷锟侥硷拷锟斤拷什么) 
+* @author 锟斤拷锟斤拷锟斤拷
+* @date 2015锟斤拷11锟斤拷11锟斤拷 锟斤拷锟斤拷2:55:12 
 * @version V1.0   
 */
 package com.antteam.jedis;
@@ -16,13 +16,13 @@ import redis.clients.jedis.JedisCluster;
 /**   
 * @Package com.antteam.jedis 
 * @author niceling
-* @date 2015年11月11日 下午2:55:12   
+* @date 2015锟斤拷11锟斤拷11锟斤拷 锟斤拷锟斤拷2:55:12   
 */
 public class SingleLineCommand{
 
 	/**
 	* @Title: excute 
-	* @Description:单服务的情况下使用该函数
+	* @Description:锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷使锟矫该猴拷锟斤拷
 	* @param @param dataCallBack
 	* @param @return
 	* @return String
@@ -40,7 +40,6 @@ public class SingleLineCommand{
 	
 	
 	public static <T> T excute(JedisClusterDataCallBack<T> dataCallBack)throws Exception{
-		//TODO 集群的实现代码
 		return null;
 	}
 	
