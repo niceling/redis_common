@@ -10,7 +10,6 @@ import redis.clients.jedis.JedisPoolConfig;
  * 
 * @ClassName: RedisConnection 
 * @author niceling
-* @date 2015-11-11 ����02:34:36 
 *
  */
 public class RedisConnection {
@@ -48,8 +47,8 @@ public class RedisConnection {
     }
     
 	public static void closeJedis(Jedis jedis){
-		if(!pool.isClosed()){
-			pool.close();
+		if(jedis!=null){
+			jedis.close();
 		}
     }
 }

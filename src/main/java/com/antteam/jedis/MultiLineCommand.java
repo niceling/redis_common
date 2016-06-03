@@ -1,9 +1,9 @@
 /**   
 * @Title: CacheCommand.java 
 * @Package com.antteam.jedis 
-* @Description: TODO(ÓÃÒ»¾ä»°ÃèÊö¸ÃÎÄ¼ş×öÊ²Ã´) 
+* @Description: TODO(ç”¨ä¸€å¥è¯æè¿°è¯¥æ–‡ä»¶åšä»€ä¹ˆ) 
 * @author niceling
-* @date 2015Äê11ÔÂ11ÈÕ ÏÂÎç5:20:06 
+* @date 2015å¹´11æœˆ11æ—¥ ä¸‹åˆ5:20:06 
 * @version V1.0   
 */
 package com.antteam.jedis;
@@ -15,14 +15,14 @@ import redis.clients.jedis.Jedis;
 /**   
 * @Package com.antteam.jedis 
 * @author niceling
-* @date 2015Äê11ÔÂ11ÈÕ ÏÂÎç5:20:06   
+* @date 2015å¹´11æœˆ11æ—¥ ä¸‹åˆ5:20:06   
 */
 
 public class MultiLineCommand{
 	
 	/**
 	* @Title: excute 
-	* @Description:»º´æµÄÖ´ĞĞÃüÁî
+	* @Description:ç¼“å­˜çš„æ‰§è¡Œå‘½ä»¤
 	* @param @param dataCallBack
 	* @param @return
 	* @return String

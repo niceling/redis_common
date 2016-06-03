@@ -1,9 +1,9 @@
 /**   
 * @Title: TestTransationCommand.java 
 * @Package redis_common 
-* @Description: TODO(用一句话描述该文件做什么) 
+* @Description: TODO(锟斤拷一锟戒话锟斤拷锟斤拷锟斤拷锟侥硷拷锟斤拷什么) 
 * @author niceling
-* @date 2015年11月11日 下午5:39:18 
+* @date 2015锟斤拷11锟斤拷11锟斤拷 锟斤拷锟斤拷5:39:18 
 * @version V1.0   
 */
 package com.antteam.test;
@@ -19,9 +19,7 @@ import redis.clients.jedis.Transaction;
 
 /**   
 * @Package redis_common 
-* @Description: TODO(用一句话描述该文件做什么) 
 * @author niceling
-* @date 2015年11月11日 下午5:39:18   
 */
 
 public class TestTransationCommand {

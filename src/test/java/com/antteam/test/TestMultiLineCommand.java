@@ -1,9 +1,9 @@
 /**   
 * @Title: TestMultiLineCommand.java 
 * @Package com.antteam.test 
-* @Description: TODO(用一句话描述该文件做什么) 
+* @Description: TODO(锟斤拷一锟戒话锟斤拷锟斤拷锟斤拷锟侥硷拷锟斤拷什么) 
 * @author niceling
-* @date 2015年11月12日 上午11:56:51 
+* @date 2015锟斤拷11锟斤拷12锟斤拷 锟斤拷锟斤拷11:56:51 
 * @version V1.0   
 */
 package com.antteam.test;
@@ -17,9 +17,7 @@ import redis.clients.jedis.Jedis;
 
 /**   
 * @Package com.antteam.test 
-* @Description: TODO(用一句话描述该文件做什么) 
 * @author niceling
-* @date 2015年11月12日 上午11:56:51   
 */
 
 public class TestMultiLineCommand {

@@ -9,6 +9,7 @@
 package com.antteam.test;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
@@ -77,44 +78,21 @@ public class BaseTest {
 	@Test
 	public void TestSingleCommand3(){
 		try {
+			Long beginTime=System.currentTimeMillis();
 			List<String> val=SingleLineCommand.excute(new JedisDataCallBack<List<String>>() {
 				public List<String> command(Jedis jedis) {
 					List<String> list=jedis.lrange("mylist", 0,-1);
 					return list;
 				}
 			});
-			System.out.println(val);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
-	/**
-	 * 
-	* @Title: TestSingleCommand4 
-	* @auth:niceling
-	* @Description: 测试新增列表元素
-	* @param 
-	* @return void
-	* @throws
-	 */
-	@Test
-	public void TestSingleCommand4(){
-		try {
-			Long val=SingleLineCommand.excute(new JedisDataCallBack<Long>() {
-				public Long command(Jedis jedis) {
-					JSONVO vo=new JSONVO();
-					vo.setChannel_id(1);
-					vo.setChannel_name("商城");
-					vo.setDisplay(1);
-					vo.setIndex(1);
-					vo.setUrl("http://www.baidu.com");
-					String jsonStr=JSONObject.toJSONString(vo);
-					Long index=jedis.lpush("mylist", jsonStr);
-					return index;
-				}
-			});
-			System.out.println(val);
+			List<JSONVO> list=new ArrayList<JSONVO>();
+			for(String obj:val){
+				JSONVO vo=JSONObject.parseObject(obj, JSONVO.class);
+				vo.setJsonObject(obj);
+				list.add(vo);
+			}
+			Long endTime=System.currentTimeMillis();
+			System.out.println("消耗时间:"+(endTime-beginTime));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -191,11 +169,11 @@ public class BaseTest {
 			Long val=SingleLineCommand.excute(new JedisDataCallBack<Long>() {
 				public Long command(Jedis jedis) {
 					JSONVO vo=new JSONVO();
-					vo.setChannel_id(1);
-					vo.setChannel_name("商城");
-					vo.setDisplay(1);
-					vo.setIndex(1);
-					vo.setUrl("http://www.baidu.com");
+//					vo.setChannel_id(1);
+//					vo.setChannel_name("商城");
+//					vo.setDisplay(1);
+//					vo.setIndex(1);
+					vo.setUrl("http://www.foodmall.com/home.htm");
 					Long count=jedis.lrem("mylist",0, JSONObject.toJSONString(vo));
 					return count;
 				}

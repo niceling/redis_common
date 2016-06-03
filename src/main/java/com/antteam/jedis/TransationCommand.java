@@ -1,9 +1,9 @@
 /**   
 * @Title: TransationCommand.java 
 * @Package com.antteam.jedis 
-* @Description: TODO(ÓÃÒ»¾ä»°ÃèÊö¸ÃÎÄ¼ş×öÊ²Ã´) 
+* @Description: TODO(ç”¨ä¸€å¥è¯æè¿°è¯¥æ–‡ä»¶åšä»€ä¹ˆ) 
 * @author niceling
-* @date 2015Äê11ÔÂ11ÈÕ ÏÂÎç5:19:15 
+* @date 2015å¹´11æœˆ11æ—¥ ä¸‹åˆ5:19:15 
 * @version V1.0   
 */
 package com.antteam.jedis;
@@ -17,9 +17,9 @@ import redis.clients.jedis.Transaction;
 
 /**   
 * @Package com.antteam.jedis 
-* @Description: ÊÂÎñ¹ÜÀí
+* @Description: äº‹åŠ¡ç®¡ç†
 * @author niceling
-* @date 2015Äê11ÔÂ11ÈÕ ÏÂÎç5:19:15   
+* @date 2015å¹´11æœˆ11æ—¥ ä¸‹åˆ5:19:15   
 */
 
 public class TransationCommand {
@@ -29,7 +29,7 @@ public class TransationCommand {
 	/**
 	 * 
 	* @Title: excuteWithWatch 
-	* @Description: Õë¶ÔÔöÉ¾¸ÄµÄÊÂÎñ
+	* @Description: é’ˆå¯¹å¢åˆ æ”¹çš„äº‹åŠ¡
 	* @param @param dataCallBack
 	* @param @return
 	* @param @throws Exception
@@ -42,14 +42,14 @@ public class TransationCommand {
 		if(watchKeys!=null && watchKeys.length>0){
 			jedis.watch(watchKeys);
 		}
-		/**¿ªÆôÊÂÎñ*/
+		/**å¼€å¯äº‹åŠ¡*/
 		Transaction transaction=jedis.multi();
 		try {
 			dataCallBack.command(transaction);
-			/**ÊÂÎñÌá½»·µ»Ø¸÷ÃüÁîµÄÖ´ĞĞ½á¹û*/
+			/**äº‹åŠ¡æäº¤è¿”å›å„å‘½ä»¤çš„æ‰§è¡Œç»“æœ*/
 			return transaction.exec();
 		}catch(Exception ex){
-			/**ÓĞÕë¶Ô´úÂëÒì³££¬ÊÂÎñ»Ø¹ö*/
+			/**æœ‰é’ˆå¯¹ä»£ç å¼‚å¸¸ï¼Œäº‹åŠ¡å›æ»š*/
 			transaction.discard();
 		}
 		finally 

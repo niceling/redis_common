@@ -7,7 +7,7 @@ public class RedisConfig {
 	private static Properties prop = new Properties();
 
 	/**
-	 * ¶ÁÈ¡ÅäÖÃÎÄ¼ş
+	 * è¯»å–é…ç½®æ–‡ä»¶
 	 */
 	static {
 		try {
@@ -20,7 +20,7 @@ public class RedisConfig {
 	/**
 	 * 
 	 * @Title: getValue
-	 * @Description: ¸ù¾İkey»ñÈ¡Öµ
+	 * @Description: æ ¹æ®keyè·å–å€¼
 	 * @param key
 	 * @return String
 	 * @throws

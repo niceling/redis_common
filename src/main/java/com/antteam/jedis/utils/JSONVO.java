@@ -25,6 +25,7 @@ public class JSONVO implements Serializable{
 	private Integer index;
 	private String url;
 	private Integer display;
+	private String jsonObject;
 	public Integer getChannel_id() {
 		return channel_id;
 	}
@@ -55,5 +56,10 @@ public class JSONVO implements Serializable{
 	public void setDisplay(Integer display) {
 		this.display = display;
 	}
-	
+	public String getJsonObject() {
+		return jsonObject;
+	}
+	public void setJsonObject(String jsonObject) {
+		this.jsonObject = jsonObject;
+	}
 }
